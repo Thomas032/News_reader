@@ -1,0 +1,38 @@
+
+def parse_data(news, lin):
+    prehled = []
+    odkazy = []
+    for i in range(len(news)):
+        report = news[i]
+        odkaz = lin[i]
+        if "/news" in odkaz:
+            print(f"{report} ---> https://www.bbc.com/{odkaz}")
+            
+            prehled.append(report)
+            odkazy.append(odkaz)
+            
+    return prehled, odkaz
+    
+    
+def read_data(report, odkaz):
+   
+  
+    data = Counter(report)
+    dictonary = dict(data)
+    print(dictonary)
+    
+    for item in dictonary:
+        num = dictonary[item]
+        col = item
+        first = []
+        sec = []
+        if num >> 1:
+            first.append(col)
+            print(col)
+        if num == 1:
+            sec.append(col)
+            #print(col)
+        suma = first
+        for line in suma:
+            engine.say(line)
+            engine.runAndWait()
